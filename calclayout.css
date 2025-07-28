@@ -1,0 +1,415 @@
+*{
+	box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#keyPad_Help{
+    color: #000;
+	background: #3498db;
+	width: 54px;
+	height: 25px;
+	padding: 1px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;  
+    line-height: 20px;
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 7px;   
+	border: 1px solid #2980b9;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+#keyPad_Help:hover{
+   background: #2980b9;
+}
+
+#keyPad_Helpback{
+    color: #000;
+	background: #27ae60;
+	width: 54px;
+	height: 25px;
+	padding: 1px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;  
+    line-height: 20px;
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 7px;   
+	border: 1px solid #229954;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+	-ms-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+#keyPad_Helpback:hover{
+   background: #229954;
+}
+
+
+
+.hide{
+ display: none;
+}
+
+
+
+#mainContentArea{
+    margin-top: 0px;
+    padding: 10px;
+}
+
+.calc_container {
+    background: #dadada;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1) inset;
+    padding: 0px;
+    width: 463px;
+    border-bottom: 7px solid #999;
+    position: relative;
+}
+
+.left_sec{
+    float: left;
+}
+
+.right_sec{
+    float: left;
+    height: 180px; 
+}
+
+/* KEY ROW */
+.calc_row{
+    display: block;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+/* KEY BUTTONS */
+#keyPad a {
+    background: #f1f1f1;
+    border-color: #aaa;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    color: #444;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 20px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 35px;
+    transition: all 0.2s ease;
+}
+
+#keyPad a.min {
+    font-size: 10.5px;
+}
+
+#keyPad a.last {
+    margin-right: 0px;
+}
+
+#keyPad a:active {
+    position: relative;    
+    height: 25px;
+    border-bottom: 1px solid #aaa;
+    transform: translateY(2px);
+}
+
+#keyPad_btnEnter:active  {
+	position: absolute !important;	
+	bottom: 17px !important;  
+}
+
+#keyPad a:hover  {
+    background: #eaeaea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.text_container {
+   display: inline;
+}
+
+.memoryhide {
+  visibility: hidden;
+  position: absolute;
+  top: 52px;
+  right: 429px;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1s, visibility 1s;
+}
+
+.memoryshow {
+  visibility: visible;
+  opacity: 1;
+} 
+
+/* INPUT/MEM TEXT BOXES*/
+.keyPad_TextBox, .keyPad_TextBox1{
+    background: #fff;
+    border-color: #aaa;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    text-indent: 10px;
+    vertical-align: middle;
+    width: 434px;
+    float: left;
+    margin-bottom: 7px;
+    padding-right: 5px;	
+}
+
+.degree_radian{
+    float: left;
+    height: 25px;
+    width: 80px;
+    display: inline-block;
+    font-size: 9px;
+    margin-top: 4px;
+    vertical-align: middle;
+}
+
+.degree_radian input[type="radio"] {
+    margin-right: 2px;
+}
+
+#keyPad_btnDot{
+	width: 35px !important;
+}
+
+#keyPad_btn0{
+	width: 76px !important;
+}
+
+/* ARROWS */
+.calc_arrows{
+    font-size: 24px !important;
+}
+
+/* ENTER a: QUAD WIDTH */
+#keyPad #keyPad_btnEnter{
+    background: #2ecc71;
+    border-color: #27ae60;
+	bottom: 17px;
+    color: #fff;
+    font-size: 20px;
+	line-height: 47px;
+	right: 10px;
+    width: 35px;
+    height: 53px;
+	position: absolute;
+    font-size: 20px;	
+}
+
+/* BACKSPACE/CLEAR INPUT KEYS*/
+#keyPad #keyPad_btnClr,
+#keyPad #keyPad_btnInverseSign,
+#keyPad #keyPad_btnAllClr{
+    background: #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+	width: 35px !important;
+}
+
+#keyPad #keyPad_btnBack {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #c0392b;
+	width: 76px !important;
+}
+
+/* SPECIAL FORMATTING FOR SUPER-SCRIPT KEYS */
+#keyPad #keyPad_btnSquare,
+#keyPad #keyPad_btnCube,
+#keyPad #keyPad_btnExp,
+#keyPad #keyPad_btnYpowX{ 
+    font-size: 12px;
+}
+
+/* CLEAR BOTH */
+.clear {
+    clear: both;
+}
+
+.superscript, .subscript  {
+    font-size: 0.7em;
+    position: relative;
+    top: -0.5em;
+}
+
+.subscript {
+   top: 0.5em;
+}
+
+/* Button type specific styling */
+.keyPad_btnNumeric {
+    background: #ecf0f1 !important;
+    border-color: #bdc3c7 !important;
+}
+
+.keyPad_btnNumeric:hover {
+    background: #d5dbdb !important;
+}
+
+.keyPad_btnBinaryOp {
+    background: #f39c12 !important;
+    border-color: #e67e22 !important;
+    color: #fff !important;
+}
+
+.keyPad_btnBinaryOp:hover {
+    background: #e67e22 !important;
+}
+
+.keyPad_btnUnaryOp {
+    background: #9b59b6 !important;
+    border-color: #8e44ad !important;
+    color: #fff !important;
+}
+
+.keyPad_btnUnaryOp:hover {
+    background: #8e44ad !important;
+}
+
+.keyPad_btnCommand {
+    background: #e74c3c !important;
+    border-color: #c0392b !important;
+    color: #fff !important;
+}
+
+.keyPad_btnCommand:hover {
+    background: #c0392b !important;
+}
+
+.keyPad_btnMemoryOp {
+    background: #27ae60 !important;
+    border-color: #229954 !important;
+    color: #fff !important;
+}
+
+.keyPad_btnMemoryOp:hover {
+    background: #229954 !important;
+}
+
+.keyPad_btnConst {
+    background: #34495e !important;
+    border-color: #2c3e50 !important;
+    color: #fff !important;
+}
+
+.keyPad_btnConst:hover {
+    background: #2c3e50 !important;
+}
+
+/** new help changes **/
+#helpContent {
+    height: 263px;
+    margin-right: 6px;
+    overflow: auto;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+#helpContent h3 {
+    color: #495057;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#helpContent ul {
+    margin-left: 20px;
+}
+
+#helpContent li {
+    margin-bottom: 5px;
+    color: #6c757d;
+}
+
+#helptopDiv {
+	margin-bottom: 5px;
+	padding: 10px;
+	background-color: #4286f3;
+	color: #ffffff;
+    border-radius: 5px 5px 0 0;
+}
+
+#helptopDiv span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#keyPad_Help, #keyPad_Helpback {
+	/*float: right !important;*/
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .calc_container {
+        width: 95%;
+        max-width: 463px;
+    }
+    
+    .keyPad_TextBox, .keyPad_TextBox1 {
+        width: 100%;
+        max-width: 434px;
+    }
+    
+    #keyPad a {
+        width: 30px;
+        height: 22px;
+        font-size: 11px;
+        line-height: 18px;
+        margin-right: 3px;
+    }
+    
+    #keyPad_btn0 {
+        width: 66px !important;
+    }
+    
+    #keyPad_btnBack {
+        width: 66px !important;
+    }
+}
